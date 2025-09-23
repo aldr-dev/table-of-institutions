@@ -1,0 +1,10 @@
+@use "var" as *;
+
+h1 {
+  color: $grn-light;
+}
+
+h2 {
+  color: blue;
+  transition: .5s ease-in-out;
+}
