@@ -212,12 +212,169 @@ template {
 [hidden] {
   display: none;
 }
-h1 {
-  color: #33d35e;
+*, ::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-h2 {
-  color: blue;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+body {
+  font-family: "Gothampro", sans-serif;
+  line-height: 1.3;
+  font-size: 14px;
+  color: #0e0e10;
+  background-color: #f1f4fd;
+}
+
+.wrapper-container {
+  padding: 30px 10px;
+}
+.wrapper-container .container {
+  max-width: 1585px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.table-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.table-header-top-headline {
+  font-size: 24px;
+  line-height: 1;
+  color: #111827;
+  margin-bottom: 20px;
+}
+
+.table-header-top-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-header-bottom-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.downloadButton {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 9px 16px 9px 30px;
+  font-weight: 500;
+  color: #0e0e10;
+  border: none;
+  background: #33d35e url("/public/icons/ic-file.svg") no-repeat 10px center/15px 15px;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .downloadButton:hover {
+    background-color: #16b240;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .downloadButton:active {
+    -webkit-box-shadow: 1px 1px 5px #d3d3de;
+    box-shadow: 1px 1px 5px #d3d3de;
+  }
+}
+.inputSearchWrapper {
+  position: relative;
+  width: 100%;
+}
+.inputSearchWrapper .inputSearch {
+  height: 10px;
+  width: 100%;
+  padding: 16px 50px 16px 16px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #d3d3de;
+}
+.inputSearchWrapper .inputSearch:focus {
+  outline: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .inputSearchWrapper .inputSearch:focus {
+    -webkit-box-shadow: 1px 1px 5px #d3d3de;
+    box-shadow: 1px 1px 5px #d3d3de;
+  }
+}
+.inputSearchWrapper .inputSearch::-webkit-input-placeholder {
+  color: #0e0e10;
+}
+.inputSearchWrapper .inputSearch::-moz-placeholder {
+  color: #0e0e10;
+}
+.inputSearchWrapper .inputSearch:-ms-input-placeholder {
+  color: #0e0e10;
+}
+.inputSearchWrapper .inputSearch::-ms-input-placeholder {
+  color: #0e0e10;
+}
+.inputSearchWrapper .inputSearch::placeholder {
+  color: #0e0e10;
+}
+.inputSearchWrapper .inputSearch:focus::-webkit-input-placeholder {
+  color: #55555c;
+}
+.inputSearchWrapper .inputSearch:focus::-moz-placeholder {
+  color: #55555c;
+}
+.inputSearchWrapper .inputSearch:focus:-ms-input-placeholder {
+  color: #55555c;
+}
+.inputSearchWrapper .inputSearch:focus::-ms-input-placeholder {
+  color: #55555c;
+}
+.inputSearchWrapper .inputSearch:focus::placeholder {
+  color: #55555c;
+}
+.inputSearchWrapper::before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  background: url("/public/icons/ic-search.svg") no-repeat center right/contain;
+  z-index: 1;
 }

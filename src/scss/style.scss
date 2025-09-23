@@ -1,10 +1,67 @@
 @use "var" as *;
 
-h1 {
-  color: $grn-light;
+*, ::before, *::after {
+  box-sizing: border-box;
 }
 
-h2 {
-  color: blue;
-  transition: .5s ease-in-out;
+body {
+  font-family: 'Gothampro', sans-serif;
+  line-height: 1.3;
+  font-size: 14px;
+  color: $blk-dark;
+  background-color: $bg;
+}
+
+.wrapper-container {
+  padding: 30px 10px;
+
+  .container {
+    max-width: 1585px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    background: $white;
+    border-radius: 16px;
+  }
+}
+
+ul, li {
+  list-style: none;
+}
+
+a, {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+.table-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.table-header-top-headline {
+  font-size: 24px;
+  line-height: 1;
+  color: $gray-dark;
+  margin-bottom: 20px;
+}
+
+.table-header-top-action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-header-bottom-action {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

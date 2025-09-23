@@ -1,0 +1,46 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixins" as *;
+
+.inputSearchWrapper {
+  position: relative;
+  width: 100%;
+
+  .inputSearch {
+    height: 10px;
+    width: 100%;
+    padding: 16px 50px 16px 16px;
+    border-radius: 10px;
+    background-color: $white;
+    border: 1px solid $input-border;
+  }
+
+  .inputSearch:focus {
+    outline: none;
+
+    @include hover {
+      box-shadow: 1px 1px 5px $input-border;
+    }
+  }
+
+  .inputSearch::placeholder {
+    color: $blk-dark;
+  }
+
+  .inputSearch:focus::placeholder {
+    color: $gray;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 15px;
+    background: url('/public/icons/ic-search.svg') no-repeat center right / contain;
+    z-index: 1;
+  }
+}
+
+
