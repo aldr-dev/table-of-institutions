@@ -1,0 +1,205 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixins" as *;
+
+input[data-test-id="dp-input"] {
+  font-family: 'Gothampro', sans-serif;
+  border-radius: 10px;
+  height: 34px;
+  border: 1px solid $input-border;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+
+  &::placeholder {
+    color: $blk-dark;
+    opacity: 1;
+    padding-left: 11px;
+  }
+
+  &.dp__input_readonly {
+    padding-left: 0;
+  }
+
+  &:hover {
+    @include hover {
+      box-shadow: 1px 1px 8px $input-border;
+
+      .dp__input:hover:not(.dp__input_focus) {
+        border: none !important;
+      }
+    }
+  }
+
+  &:focus {
+    box-shadow: 1px 1px 8px $input-border;
+  }
+}
+
+.dp__menu {
+  &.dp__menu_index {
+    &.dp__theme_light {
+      box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid $input-border;
+    }
+  }
+
+  .dp__arrow_top {
+    border-inline-end: 1px solid $input-border;
+    border-top: 1px solid $input-border;
+  }
+
+  .dp__action_row {
+    padding: 0;
+  }
+}
+
+.my-header {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  color: $gray-dark;
+  border-bottom: 1px solid $input-border;
+}
+
+.dp__instance_calendar {
+  .dp__menu_inner {
+    padding: 0;
+  }
+}
+
+.dp__calendar_header_separator {
+  display: none;
+}
+
+.dp__btn {
+  &.dp--arrow-btn-nav[aria-label="Previous month"] {
+    padding-left: 0;
+  }
+}
+
+.dp__btn {
+  &.dp--arrow-btn-nav[aria-label="Next month"] {
+    padding-right: 0;
+  }
+}
+
+.dp__btn {
+  &.dp__month_year_select {
+    font-family: 'Manrope', sans-serif;
+    width: 30%;
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: $gray-dark;
+  }
+}
+
+.dp__month_year_wrap {
+  justify-content: center;
+  gap: 15px;
+}
+
+.dp__calendar_header_item {
+  font-weight: 400;
+  font-size: 14px;
+  color: $calendar-week;
+  text-transform: uppercase;
+}
+
+.dp__cell_inner {
+  font-weight: 400;
+  font-size: 14px;
+  color: $blk-dark;
+  border-radius: 0;
+
+  &:hover {
+    border-radius: 0;
+  }
+
+  &.dp__today {
+    border: 1px solid $blk-dark;
+    border-radius: 0;
+  }
+
+  &.dp__range_start {
+    background-color: $grn-light;
+    color: $blk-dark;
+    border-radius: 0;
+  }
+
+  &.dp__range_end {
+    background-color: $grn-light;
+    color: $blk-dark;
+    border-radius: 0;
+  }
+
+  &.dp__range_between {
+    background-color: $grn-white;
+    border-radius: 0;
+  }
+}
+
+.dp__action_row {
+  display: inline-block !important;
+}
+
+.dp__action_buttons[data-dp-element="action-row"] {
+  display: flex;
+  justify-content: space-between;
+  margin-inline-start: 0;
+  margin-top: 16px;
+  gap: 15px;
+
+  .custom {
+    cursor: pointer;
+    border: 1px solid $gray;
+    border-radius: 10px;
+    padding: 10px 8px;
+    width: 50%;
+    font-size: 15px;
+    background: $white;
+    font-weight: 500;
+    color: $blk-dark;
+    transition: all 0.3s ease-in-out;
+
+    &.custom-cancel {
+      &:active {
+        background: $bg;
+      }
+    }
+
+    &.custom-select {
+      background: $blk-dark;
+      color: $bg;
+
+      @include hover {
+        &:hover {
+          background: $grn;
+          border: 1px solid $grn;
+        }
+      }
+
+      &:active {
+        background: $grn-dark;
+      }
+    }
+  }
+}
+
+.date-range-picker-wrapper {
+  position: relative;
+
+  .input-slot-image {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 16px;
+    height: 16px;
+  }
+}

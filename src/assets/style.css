@@ -238,6 +238,8 @@ body {
 
 ul, li {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -292,7 +294,210 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
 }
 
+input[data-test-id=dp-input] {
+  font-family: "Gothampro", sans-serif;
+  border-radius: 10px;
+  height: 34px;
+  border: 1px solid #d3d3de;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+}
+input[data-test-id=dp-input]::-webkit-input-placeholder {
+  color: #0e0e10;
+  opacity: 1;
+  padding-left: 11px;
+}
+input[data-test-id=dp-input]::-moz-placeholder {
+  color: #0e0e10;
+  opacity: 1;
+  padding-left: 11px;
+}
+input[data-test-id=dp-input]:-ms-input-placeholder {
+  color: #0e0e10;
+  opacity: 1;
+  padding-left: 11px;
+}
+input[data-test-id=dp-input]::-ms-input-placeholder {
+  color: #0e0e10;
+  opacity: 1;
+  padding-left: 11px;
+}
+input[data-test-id=dp-input]::placeholder {
+  color: #0e0e10;
+  opacity: 1;
+  padding-left: 11px;
+}
+input[data-test-id=dp-input].dp__input_readonly {
+  padding-left: 0;
+}
+@media (hover: hover) and (pointer: fine) {
+  input[data-test-id=dp-input]:hover {
+    -webkit-box-shadow: 1px 1px 8px #d3d3de;
+    box-shadow: 1px 1px 8px #d3d3de;
+  }
+  input[data-test-id=dp-input]:hover .dp__input:hover:not(.dp__input_focus) {
+    border: none !important;
+  }
+}
+input[data-test-id=dp-input]:focus {
+  -webkit-box-shadow: 1px 1px 8px #d3d3de;
+  box-shadow: 1px 1px 8px #d3d3de;
+}
 
+.dp__menu.dp__menu_index.dp__theme_light {
+  -webkit-box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 40px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #d3d3de;
+}
+.dp__menu .dp__arrow_top {
+  -webkit-border-end: 1px solid #d3d3de;
+  border-inline-end: 1px solid #d3d3de;
+  border-top: 1px solid #d3d3de;
+}
+.dp__menu .dp__action_row {
+  padding: 0;
+}
+
+.my-header {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  color: #111827;
+  border-bottom: 1px solid #d3d3de;
+}
+
+.dp__instance_calendar .dp__menu_inner {
+  padding: 0;
+}
+
+.dp__calendar_header_separator {
+  display: none;
+}
+
+.dp__btn.dp--arrow-btn-nav[aria-label="Previous month"] {
+  padding-left: 0;
+}
+
+.dp__btn.dp--arrow-btn-nav[aria-label="Next month"] {
+  padding-right: 0;
+}
+
+.dp__btn.dp__month_year_select {
+  font-family: "Manrope", sans-serif;
+  width: 30%;
+  font-weight: 600;
+  line-height: 1.5;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: #111827;
+}
+
+.dp__month_year_wrap {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.dp__calendar_header_item {
+  font-weight: 400;
+  font-size: 14px;
+  color: #93939b;
+  text-transform: uppercase;
+}
+
+.dp__cell_inner {
+  font-weight: 400;
+  font-size: 14px;
+  color: #0e0e10;
+  border-radius: 0;
+}
+.dp__cell_inner:hover {
+  border-radius: 0;
+}
+.dp__cell_inner.dp__today {
+  border: 1px solid #0e0e10;
+  border-radius: 0;
+}
+.dp__cell_inner.dp__range_start {
+  background-color: #33d35e;
+  color: #0e0e10;
+  border-radius: 0;
+}
+.dp__cell_inner.dp__range_end {
+  background-color: #33d35e;
+  color: #0e0e10;
+  border-radius: 0;
+}
+.dp__cell_inner.dp__range_between {
+  background-color: #c3fcd2;
+  border-radius: 0;
+}
+
+.dp__action_row {
+  display: inline-block !important;
+}
+
+.dp__action_buttons[data-dp-element=action-row] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
+  margin-top: 16px;
+  gap: 15px;
+}
+.dp__action_buttons[data-dp-element=action-row] .custom {
+  cursor: pointer;
+  border: 1px solid #55555c;
+  border-radius: 10px;
+  padding: 10px 8px;
+  width: 50%;
+  font-size: 15px;
+  background: #fff;
+  font-weight: 500;
+  color: #0e0e10;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.dp__action_buttons[data-dp-element=action-row] .custom.custom-cancel:active {
+  background: #f1f4fd;
+}
+.dp__action_buttons[data-dp-element=action-row] .custom.custom-select {
+  background: #0e0e10;
+  color: #f1f4fd;
+}
+@media (hover: hover) and (pointer: fine) {
+  .dp__action_buttons[data-dp-element=action-row] .custom.custom-select:hover {
+    background: #24c14e;
+    border: 1px solid #24c14e;
+  }
+}
+.dp__action_buttons[data-dp-element=action-row] .custom.custom-select:active {
+  background: #16b240;
+}
+
+.date-range-picker-wrapper {
+  position: relative;
+}
+.date-range-picker-wrapper .input-slot-image {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
 .downloadButton {
   cursor: pointer;
   border-radius: 10px;
@@ -301,19 +506,17 @@ h1, h2, h3, h4, h5, h6 {
   color: #0e0e10;
   border: none;
   background: #33d35e url("/public/icons/ic-file.svg") no-repeat 10px center/15px 15px;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 @media (hover: hover) and (pointer: fine) {
   .downloadButton:hover {
     background-color: #16b240;
   }
 }
-@media (hover: hover) and (pointer: fine) {
-  .downloadButton:active {
-    -webkit-box-shadow: 1px 1px 5px #d3d3de;
-    box-shadow: 1px 1px 5px #d3d3de;
-  }
+.downloadButton:active {
+  -webkit-box-shadow: 1px 1px 5px #d3d3de;
+  box-shadow: 1px 1px 5px #d3d3de;
 }
 .inputSearchWrapper {
   position: relative;
@@ -326,14 +529,20 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
   background-color: #fff;
   border: 1px solid #d3d3de;
+  -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: -webkit-box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
 }
 .inputSearchWrapper .inputSearch:focus {
   outline: none;
+  -webkit-box-shadow: 1px 1px 8px #d3d3de;
+  box-shadow: 1px 1px 8px #d3d3de;
 }
 @media (hover: hover) and (pointer: fine) {
-  .inputSearchWrapper .inputSearch:focus {
-    -webkit-box-shadow: 1px 1px 5px #d3d3de;
-    box-shadow: 1px 1px 5px #d3d3de;
+  .inputSearchWrapper .inputSearch:hover {
+    -webkit-box-shadow: 1px 1px 8px #d3d3de;
+    box-shadow: 1px 1px 8px #d3d3de;
   }
 }
 .inputSearchWrapper .inputSearch::-webkit-input-placeholder {
@@ -377,4 +586,69 @@ h1, h2, h3, h4, h5, h6 {
   width: 15px;
   background: url("/public/icons/ic-search.svg") no-repeat center right/contain;
   z-index: 1;
+}
+.selectButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #d3d3de;
+  border-radius: 10px;
+  background: #fff;
+  height: 34px;
+  padding: 16px 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media (hover: hover) and (pointer: fine) {
+  .selectButton:hover {
+    -webkit-box-shadow: 1px 1px 5px #d3d3de;
+    box-shadow: 1px 1px 5px #d3d3de;
+  }
+}
+.selectButton:active {
+  -webkit-box-shadow: 1px 1px 5px #d3d3de;
+  box-shadow: 1px 1px 5px #d3d3de;
+}
+.selectButton .selectButtonIcon {
+  height: 20px;
+  width: 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.selectButton .selectButtonIcon.active {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.selectList {
+  border: 1px solid #d3d3de;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px;
+}
+.selectList .selectItem {
+  padding: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .selectList .selectItem:hover {
+    background: #F0F0F0;
+  }
+  .selectList .selectItem:hover:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .selectList .selectItem:hover:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
 }

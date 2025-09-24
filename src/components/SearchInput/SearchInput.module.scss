@@ -12,13 +12,17 @@
     border-radius: 10px;
     background-color: $white;
     border: 1px solid $input-border;
+    transition: box-shadow 0.3s ease-in-out;
   }
 
   .inputSearch:focus {
     outline: none;
+    box-shadow: 1px 1px 8px $input-border;
+  }
 
+  .inputSearch:hover {
     @include hover {
-      box-shadow: 1px 1px 5px $input-border;
+      box-shadow: 1px 1px 8px $input-border;
     }
   }
 

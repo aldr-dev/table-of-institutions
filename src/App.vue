@@ -2,6 +2,7 @@
 import SearchInput from '@/components/SearchInput/SearchInput.vue';
 import DownloadButton from '@/components/DownloadButton/DownloadButton.vue';
 import DateRangePicker from '@/components/DateRangePicker/DateRangePicker.vue';
+import SelectInput from '@/components/SelectInput/SelectInput.vue';
 </script>
 
 <template>
@@ -17,12 +18,22 @@ import DateRangePicker from '@/components/DateRangePicker/DateRangePicker.vue';
         </div>
         <div class="table-header-bottom-action">
           <DateRangePicker />
-          <select name="" id="">
-            <option value="volvo">Все виды</option>
-          </select>
-          <select name="" id="">
-            <option value="volvo">Все статусы</option>
-          </select>
+          <SelectInput
+            :options="[
+              { id: 1, value: 'Все виды' },
+              { id: 2, value: 'Постоянно' },
+              { id: 3, value: 'Не определен' },
+            ]"
+            modelValue="Все виды"
+          />
+          <SelectInput
+            :options="[
+              { id: 1, value: 'Все статусы' },
+              { id: 2, value: 'Действующее' },
+              { id: 3, value: 'Недействующее' },
+            ]"
+            modelValue="Все статусы"
+          />
         </div>
       </header>
     </div>

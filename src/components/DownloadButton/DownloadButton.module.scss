@@ -9,7 +9,7 @@
   color: $blk-dark;
   border: none;
   background: $grn-light url("/public/icons/ic-file.svg") no-repeat 10px center / 15px 15px;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     @include hover {
@@ -18,8 +18,6 @@
   }
 
   &:active {
-    @include hover {
       box-shadow: 1px 1px 5px $input-border;
-    }
   }
 }

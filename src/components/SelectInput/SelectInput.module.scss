@@ -1,0 +1,67 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixins" as *;
+
+.selectButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid $input-border;
+  border-radius: 10px;
+  background: $white;
+  height: 34px;
+  padding: 16px 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    @include hover {
+      box-shadow: 1px 1px 5px $input-border;
+    }
+  }
+
+  &:active {
+    box-shadow: 1px 1px 5px $input-border;
+  }
+
+  .selectButtonIcon {
+    height: 20px;
+    width: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.selectList {
+  border: 1px solid $input-border;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 5px;
+
+  .selectItem {
+    padding: 5px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      @include hover {
+        background: $gray-50-light;
+
+        &:first-child {
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        &:last-child {
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+        }
+      }
+    }
+  }
+}
+
+
