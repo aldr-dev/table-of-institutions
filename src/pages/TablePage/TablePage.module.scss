@@ -1,0 +1,27 @@
+@use '../../scss/var' as *;
+
+.tableHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tableHeaderTopHeadline {
+  font-size: 24px;
+  line-height: 1;
+  color: $gray-dark;
+  margin-bottom: 20px;
+}
+
+.tableHeaderTopAction {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tableHeaderBottomAction {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

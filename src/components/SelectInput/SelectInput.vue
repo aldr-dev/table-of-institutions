@@ -43,15 +43,15 @@ onBeforeUnmount(() => {
       {{ selectedValue }}
       <img
         :class="[styles.selectButtonIcon, onToggleValue ? styles.active : '']"
-        src="/public/icons/ic-arrow.svg"
+        src="/icons/ic-arrow.svg"
         alt="arrow"
       />
     </button>
     <ul :class="styles.selectList" v-if="onToggleValue">
       <li
-        :class="styles.selectItem"
-        @click="onChangeValue(option.value)"
         v-for="option in props.options"
+        @click="onChangeValue(option.value)"
+        :class="styles.selectItem"
         :key="option.id"
       >
         {{ option.value }}

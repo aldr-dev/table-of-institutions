@@ -61,6 +61,6 @@ const format = (rangeDate: [Date, Date]): string => {
         <button class="custom custom-select" @click="selectDate">Сохранить</button>
       </template>
     </VueDatePicker>
-    <img v-if="!date" class="input-slot-image" alt="calendar" src="/public/icons/ic-calendar.svg" />
+    <img v-if="!date" class="input-slot-image" alt="calendar" src="/icons/ic-calendar.svg" />
   </div>
 </template>

@@ -1,0 +1,153 @@
+@use '../../scss/var' as *;
+@use '../../scss/mixins' as *;
+
+.paginationWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rangePageWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.recordLimitWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recordLimitShowText {
+  font-size: 12px;
+  color: $grey-text;
+}
+
+.recordLimitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $white;
+  font-size: 12px;
+  border: 1px solid $input-border;
+  border-radius: 8px;
+  padding: 6px;
+  width: 45px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  @include hover {
+    &:hover {
+      border: 1px solid $gray;
+    }
+  }
+
+  .recordLimitImg {
+    height: 18px;
+    width: 18px;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.recordLimitInner {
+  position: relative;
+}
+
+.recordLimitList {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  padding: 5px;
+  width: 100%;
+  background: $white;
+  border-radius: 8px;
+  border: 1px solid $input-border;
+
+  .recordLimitItem {
+    padding: 5px 5px;
+    cursor: pointer;
+
+    &:first-child {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    @include hover {
+      &:hover {
+        background: $gray-50-light;
+      }
+    }
+  }
+}
+
+
+.rangePageValue {
+  font-size: 12px;
+  color: $grey-text;
+}
+
+.pagination {
+  display: flex;
+  gap: 3px;
+}
+
+.paginationPrevButton,
+.paginationNextButton {
+  border: 1px solid $input-border;
+  border-radius: 4px;
+  padding: 2px 3px;
+  margin-right: 5px;
+  flex-shrink: 0;
+  width: 20px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  @include hover {
+    &:hover {
+      border: 1px solid $gray;
+    }
+  }
+
+  .paginationPrevButtonImg {
+    transform: rotate(90deg);
+  }
+}
+
+.paginationNextButton {
+  margin-left: 5px;
+  margin-right: 0;
+
+  .paginationNextButtonImg {
+    transform: rotate(-90deg);
+    height: 10px;
+    width: 10px;
+  }
+}
+
+.paginationButton {
+  border-radius: 4px;
+  border: none;
+  background: none;
+  padding: 3px 8px;
+  color: $gray-dark;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &.active {
+    background: $gray-light;
+  }
+}

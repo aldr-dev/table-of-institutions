@@ -1,0 +1,51 @@
+@use "../../scss/var" as *;
+@use "../../scss/mixins" as *;
+
+
+.wrapperNotFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 15px;
+}
+
+.containerNotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .headlineNotFound {
+    line-height: normal;
+    font-size: 100px;
+    color: $red;
+    margin-bottom: 10px;
+  }
+
+  .descNotFound {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .linkNotFound {
+    text-align: center;
+    display: inline-block;
+    padding: 12px 20px;
+    width: 150px;
+    background: $blk-dark;
+    border-radius: 10px;
+    color: $white;
+
+    &:hover {
+      @include hover {
+        background-color: $blk;
+      }
+    }
+
+    &:active {
+      box-shadow: 1px 1px 5px $input-border;
+    }
+  }
+}
+
