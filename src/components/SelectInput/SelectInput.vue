@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div>
+  <div :class="styles.selectButtonWrapper">
     <button @click.stop="toggleChange" :class="styles.selectButton" type="button">
       {{ selectedValue }}
       <img

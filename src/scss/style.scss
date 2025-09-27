@@ -1,4 +1,5 @@
 @use "var" as *;
+@use "mixins" as *;
 
 *, ::before, *::after {
   box-sizing: border-box;
@@ -14,12 +15,20 @@ body {
 .wrapper-container {
   padding: 30px 10px;
 
+  @include laptop {
+    padding: 80px 30px;
+  }
+
   .container {
     max-width: 1585px;
     margin: 0 auto;
     padding: 20px 10px;
     background: $white;
     border-radius: 16px;
+
+    @include laptop {
+      padding: 24px;
+    }
   }
 }
 

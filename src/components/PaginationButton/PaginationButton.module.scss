@@ -6,6 +6,11 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+
+  @include tablet {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 
 .rangePageWrapper {
@@ -13,6 +18,16 @@
   align-items: center;
   width: 100%;
   justify-content: space-between;
+
+  @include tablet {
+    justify-content: start;
+    width: auto;
+    gap: 10px;
+  }
+
+  @include desktop {
+    gap: 16px;
+  }
 }
 
 .recordLimitWrapper {
@@ -22,6 +37,7 @@
 }
 
 .recordLimitShowText {
+  display: block;
   font-size: 12px;
   color: $grey-text;
 }
@@ -39,6 +55,19 @@
   height: 30px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  @include laptop {
+    padding: 6px 10px 6px 16px;
+    width: 60px;
+    height: 36px;
+    gap: 8px;
+  }
+
+  @include desktop {
+    padding: 6px 10px 6px 10px;
+    width: 73px;
+    height: 36px;
+  }
 
   @include hover {
     &:hover {
@@ -71,9 +100,18 @@
   border-radius: 8px;
   border: 1px solid $input-border;
 
+  @include laptop {
+    top: 40px;
+  }
+
   .recordLimitItem {
     padding: 5px 5px;
     cursor: pointer;
+
+    @include desktop {
+      padding: 10px;
+      font-weight: 500;
+    }
 
     &:first-child {
       border-top-right-radius: 5px;
@@ -95,6 +133,7 @@
 
 
 .rangePageValue {
+  display: block;
   font-size: 12px;
   color: $grey-text;
 }
@@ -110,14 +149,39 @@
   border-radius: 4px;
   padding: 2px 3px;
   margin-right: 5px;
+  background: $white;
   flex-shrink: 0;
   width: 20px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
+  &:disabled {
+  opacity: 0.6;
+}
+
+  @include tablet {
+    width: 30px;
+  }
+
+  @include laptop {
+    border-radius: 8px;
+    padding: 6px 10px;
+    width: 40px;
+    height: 30px;
+  }
+
+  @include desktop {
+    width: 44px;
+    height: 36px;
+  }
+
   @include hover {
     &:hover {
       border: 1px solid $gray;
+    }
+
+    &:disabled {
+      pointer-events: none;
     }
   }
 
@@ -132,20 +196,41 @@
 
   .paginationNextButtonImg {
     transform: rotate(-90deg);
-    height: 10px;
-    width: 10px;
   }
 }
 
 .paginationButton {
   border-radius: 4px;
-  border: none;
-  background: none;
-  padding: 3px 8px;
+  border: 1px solid transparent;
+  padding: 3px 6px;
   color: $gray-dark;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
+  background: transparent;
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  @include tablet {
+    padding: 5px 10px;
+  }
+
+  @include laptop {
+    border-radius: 8px;
+    height: 30px;
+    padding: 0 12px;
+  }
+
+  @include desktop {
+    height: 36px;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  @include hover {
+    &:hover {
+      border: 1px solid $gray;
+    }
+  }
 
   &.active {
     background: $gray-light;

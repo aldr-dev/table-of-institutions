@@ -1,6 +1,13 @@
 @use "../../scss/var" as *;
 @use "../../scss/mixins" as *;
 
+.selectButtonWrapper {
+  position: relative;
+  @include laptop {
+    width: 33%;
+  }
+}
+
 .selectButton {
   display: flex;
   align-items: center;
@@ -13,6 +20,16 @@
   padding: 16px 10px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  @include laptop {
+    height: 50px;
+  }
+
+  @include desktop {
+    padding: 16px 24px 16px 24px;
+    height: 56px;
+    font-size: 16px;
+  }
 
   &:hover {
     @include hover {
@@ -29,6 +46,11 @@
     width: 20px;
     transition: all 0.3s ease-in-out;
 
+    @include laptop {
+      height: 24px;
+      width: 24px;
+    }
+
     &.active {
       transform: rotate(180deg);
     }
@@ -36,15 +58,24 @@
 }
 
 .selectList {
+  position: absolute;
   border: 1px solid $input-border;
   border-radius: 10px;
   margin-top: 5px;
   padding: 5px;
+  background: $white;
+  z-index: 9;
+  width: 100%;
 
   .selectItem {
     padding: 5px;
     font-weight: 500;
     cursor: pointer;
+
+    @include desktop {
+      padding: 10px;
+      font-size: 16px;
+    }
 
     &:hover {
       @include hover {

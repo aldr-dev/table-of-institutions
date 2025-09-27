@@ -18,10 +18,14 @@ const toggleChange = () => {
   limitRecordsList.value = !limitRecordsList.value;
 };
 
+const handleClick = () => {
+  limitRecordsList.value = false;
+};
+
 const rangePage = computed(() => {
   const currentPage = store.currentPage;
   const limit = limitRecords.value;
-  const total = store.totalCount;
+  const total = store.pagesCount;
 
   const start = (currentPage - 1) * limit + 1;
   const end = Math.min(currentPage * limit, total);
@@ -46,7 +50,7 @@ const pages = computed(() => {
   } else if (current > total - 2) {
     array.push(1, '...', total - 2, total - 1, total);
   } else {
-    array.push(1, '...', current - 1, current, current + 1, '...', total);
+    array.push(1, '...', current - 1, current, current + 1, total);
   }
 
   return array;
@@ -78,13 +82,8 @@ const prevPage = () => {
   }
 };
 
-onMounted(() => {
-  window.addEventListener('click', toggleChange);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('click', toggleChange);
-});
+onMounted(() => window.addEventListener('click', handleClick));
+onBeforeUnmount(() => window.removeEventListener('click', handleClick));
 </script>
 
 <template>
@@ -97,7 +96,7 @@ onBeforeUnmount(() => {
       <button
         v-for="p in pages"
         :key="p"
-        @click="goToPage(p)"
+        @click.stop="goToPage(p)"
         :disabled="p === '...' || p === store.currentPage"
         :class="[styles.paginationButton, { [styles.active]: p === store.currentPage }]"
       >

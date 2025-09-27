@@ -11,6 +11,20 @@
   background: $grn-light url("/public/icons/ic-file.svg") no-repeat 10px center / 15px 15px;
   transition: all 0.3s ease-in-out;
 
+  @include laptop {
+    height: 50px;
+    padding: 9px 16px 9px 36px;
+    background: $grn-light url("/public/icons/ic-file.svg") no-repeat 10px center / 20px 20px;
+  }
+
+  @include desktop {
+    height: 56px;
+    width: 147px;
+    padding: 16px 24px 16px 56px;
+    font-size: 16px;
+    background: $grn-light url("/public/icons/ic-file.svg") no-repeat 24px center / 24px 24px;
+  }
+
   &:hover {
     @include hover {
       background-color: $grn-dark;

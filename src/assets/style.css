@@ -227,12 +227,22 @@ body {
 .wrapper-container {
   padding: 30px 10px;
 }
+@media screen and (min-width: 1024px) {
+  .wrapper-container {
+    padding: 80px 30px;
+  }
+}
 .wrapper-container .container {
   max-width: 1585px;
   margin: 0 auto;
   padding: 20px 10px;
   background: #fff;
   border-radius: 16px;
+}
+@media screen and (min-width: 1024px) {
+  .wrapper-container .container {
+    padding: 24px;
+  }
 }
 
 ul, li {
@@ -267,6 +277,17 @@ input[data-test-id=dp-input] {
   transition: all 0.3s ease-in-out;
   font-size: 14px;
 }
+@media screen and (min-width: 1024px) {
+  input[data-test-id=dp-input] {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  input[data-test-id=dp-input] {
+    height: 56px;
+    font-size: 16px;
+  }
+}
 input[data-test-id=dp-input]::-webkit-input-placeholder {
   color: #0e0e10;
   opacity: 1;
@@ -295,6 +316,11 @@ input[data-test-id=dp-input]::placeholder {
 input[data-test-id=dp-input].dp__input_readonly {
   padding-left: 0;
 }
+@media screen and (min-width: 1280px) {
+  input[data-test-id=dp-input].dp__input_readonly {
+    padding-left: 15px;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   input[data-test-id=dp-input]:hover {
     -webkit-box-shadow: 1px 1px 8px #d3d3de;
@@ -321,6 +347,11 @@ input[data-test-id=dp-input]:focus {
   border-inline-end: 1px solid #d3d3de;
   border-top: 1px solid #d3d3de;
 }
+.dp__menu .dp__arrow_bottom {
+  -webkit-border-end: 1px solid #d3d3de;
+  border-inline-end: 1px solid #d3d3de;
+  border-bottom: 1px solid #d3d3de;
+}
 .dp__menu .dp__action_row {
   padding: 0;
 }
@@ -333,6 +364,11 @@ input[data-test-id=dp-input]:focus {
   margin-bottom: 16px;
   color: #111827;
   border-bottom: 1px solid #d3d3de;
+}
+@media screen and (min-width: 1280px) {
+  .my-header {
+    font-size: 20px;
+  }
 }
 
 .dp__instance_calendar .dp__menu_inner {
@@ -360,12 +396,32 @@ input[data-test-id=dp-input]:focus {
   letter-spacing: 0.02em;
   color: #111827;
 }
+@media screen and (min-width: 1280px) {
+  .dp__btn {
+    font-size: 16px;
+  }
+  .dp__btn:first-child {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+  .dp__btn:last-child {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
 
 .dp__month_year_wrap {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   gap: 15px;
+}
+@media screen and (min-width: 1280px) {
+  .dp__month_year_wrap {
+    gap: 1px;
+  }
 }
 
 .dp__calendar_header_item {
@@ -419,6 +475,11 @@ input[data-test-id=dp-input]:focus {
   margin-top: 16px;
   gap: 15px;
 }
+@media screen and (min-width: 1280px) {
+  .dp__action_buttons[data-dp-element=action-row] {
+    gap: 20px;
+  }
+}
 .dp__action_buttons[data-dp-element=action-row] .custom {
   cursor: pointer;
   border: 1px solid #55555c;
@@ -431,6 +492,13 @@ input[data-test-id=dp-input]:focus {
   color: #0e0e10;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+@media screen and (min-width: 1280px) {
+  .dp__action_buttons[data-dp-element=action-row] .custom {
+    height: 53px;
+    padding: 16px 42px;
+    font-size: 16px;
+  }
 }
 .dp__action_buttons[data-dp-element=action-row] .custom.custom-cancel:active {
   background: #f1f4fd;
@@ -451,6 +519,12 @@ input[data-test-id=dp-input]:focus {
 
 .date-range-picker-wrapper {
   position: relative;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .date-range-picker-wrapper {
+    width: 33%;
+  }
 }
 .date-range-picker-wrapper .input-slot-image {
   position: absolute;
@@ -462,6 +536,25 @@ input[data-test-id=dp-input]:focus {
   width: 16px;
   height: 16px;
 }
+@media screen and (min-width: 1024px) {
+  .date-range-picker-wrapper .input-slot-image {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .date-range-picker-wrapper .input-slot-image {
+    width: 24px;
+    height: 24px;
+    right: 25px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .dp--clear-btn {
+    padding-right: 15px !important;
+  }
+}
 .downloadButton {
   cursor: pointer;
   border-radius: 10px;
@@ -472,6 +565,22 @@ input[data-test-id=dp-input]:focus {
   background: #33d35e url("/public/icons/ic-file.svg") no-repeat 10px center/15px 15px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+  .downloadButton {
+    height: 50px;
+    padding: 9px 16px 9px 36px;
+    background: #33d35e url("/public/icons/ic-file.svg") no-repeat 10px center/20px 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .downloadButton {
+    height: 56px;
+    width: 147px;
+    padding: 16px 24px 16px 56px;
+    font-size: 16px;
+    background: #33d35e url("/public/icons/ic-file.svg") no-repeat 24px center/24px 24px;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .downloadButton:hover {
@@ -493,6 +602,15 @@ input[data-test-id=dp-input]:focus {
   flex-wrap: wrap;
   gap: 10px;
 }
+@media screen and (min-width: 768px) {
+  .paginationWrapper {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
 
 .rangePageWrapper {
   display: -webkit-box;
@@ -506,6 +624,20 @@ input[data-test-id=dp-input]:focus {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
+@media screen and (min-width: 768px) {
+  .rangePageWrapper {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    width: auto;
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .rangePageWrapper {
+    gap: 16px;
+  }
+}
 
 .recordLimitWrapper {
   display: -webkit-box;
@@ -518,6 +650,7 @@ input[data-test-id=dp-input]:focus {
 }
 
 .recordLimitShowText {
+  display: block;
   font-size: 12px;
   color: #687588;
 }
@@ -542,6 +675,21 @@ input[data-test-id=dp-input]:focus {
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+  .recordLimitButton {
+    padding: 6px 10px 6px 16px;
+    width: 60px;
+    height: 36px;
+    gap: 8px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .recordLimitButton {
+    padding: 6px 10px 6px 10px;
+    width: 73px;
+    height: 36px;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .recordLimitButton:hover {
@@ -573,9 +721,20 @@ input[data-test-id=dp-input]:focus {
   border-radius: 8px;
   border: 1px solid #d3d3de;
 }
+@media screen and (min-width: 1024px) {
+  .recordLimitList {
+    top: 40px;
+  }
+}
 .recordLimitList .recordLimitItem {
   padding: 5px 5px;
   cursor: pointer;
+}
+@media screen and (min-width: 1280px) {
+  .recordLimitList .recordLimitItem {
+    padding: 10px;
+    font-weight: 500;
+  }
 }
 .recordLimitList .recordLimitItem:first-child {
   border-top-right-radius: 5px;
@@ -592,6 +751,7 @@ input[data-test-id=dp-input]:focus {
 }
 
 .rangePageValue {
+  display: block;
   font-size: 12px;
   color: #687588;
 }
@@ -609,6 +769,7 @@ input[data-test-id=dp-input]:focus {
   border-radius: 4px;
   padding: 2px 3px;
   margin-right: 5px;
+  background: #fff;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   width: 20px;
@@ -616,10 +777,40 @@ input[data-test-id=dp-input]:focus {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
+.paginationPrevButton:disabled,
+.paginationNextButton:disabled {
+  opacity: 0.6;
+}
+@media screen and (min-width: 768px) {
+  .paginationPrevButton,
+  .paginationNextButton {
+    width: 30px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .paginationPrevButton,
+  .paginationNextButton {
+    border-radius: 8px;
+    padding: 6px 10px;
+    width: 40px;
+    height: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .paginationPrevButton,
+  .paginationNextButton {
+    width: 44px;
+    height: 36px;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .paginationPrevButton:hover,
   .paginationNextButton:hover {
     border: 1px solid #55555c;
+  }
+  .paginationPrevButton:disabled,
+  .paginationNextButton:disabled {
+    pointer-events: none;
   }
 }
 .paginationPrevButton .paginationPrevButtonImg,
@@ -635,19 +826,43 @@ input[data-test-id=dp-input]:focus {
 .paginationNextButton .paginationNextButtonImg {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  height: 10px;
-  width: 10px;
 }
 
 .paginationButton {
   border-radius: 4px;
-  border: none;
-  background: none;
-  padding: 3px 8px;
+  border: 1px solid transparent;
+  padding: 3px 6px;
   color: #111827;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
+  background: transparent;
   cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .paginationButton {
+    padding: 5px 10px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .paginationButton {
+    border-radius: 8px;
+    height: 30px;
+    padding: 0 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .paginationButton {
+    height: 36px;
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .paginationButton:hover {
+    border: 1px solid #55555c;
+  }
 }
 .paginationButton.active {
   background: #f0f0f7;
@@ -667,6 +882,20 @@ input[data-test-id=dp-input]:focus {
   transition: -webkit-box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+  .inputSearchWrapper .inputSearch {
+    height: 50px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .inputSearchWrapper .inputSearch {
+    width: 300px;
+    height: 56px;
+    font-size: 16px;
+    padding: 17px 58px 17px 24px;
+  }
 }
 .inputSearchWrapper .inputSearch:focus {
   outline: none;
@@ -721,6 +950,28 @@ input[data-test-id=dp-input]:focus {
   background: url("/public/icons/ic-search.svg") no-repeat center right/contain;
   z-index: 1;
 }
+@media screen and (min-width: 1024px) {
+  .inputSearchWrapper::before {
+    height: 20px;
+    width: 20px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .inputSearchWrapper::before {
+    height: 24px;
+    width: 24px;
+    right: 24px;
+  }
+}
+.selectButtonWrapper {
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .selectButtonWrapper {
+    width: 33%;
+  }
+}
+
 .selectButton {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -741,6 +992,18 @@ input[data-test-id=dp-input]:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (min-width: 1024px) {
+  .selectButton {
+    height: 50px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .selectButton {
+    padding: 16px 24px 16px 24px;
+    height: 56px;
+    font-size: 16px;
+  }
+}
 @media (hover: hover) and (pointer: fine) {
   .selectButton:hover {
     -webkit-box-shadow: 1px 1px 5px #d3d3de;
@@ -757,21 +1020,37 @@ input[data-test-id=dp-input]:focus {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (min-width: 1024px) {
+  .selectButton .selectButtonIcon {
+    height: 24px;
+    width: 24px;
+  }
+}
 .selectButton .selectButtonIcon.active {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .selectList {
+  position: absolute;
   border: 1px solid #d3d3de;
   border-radius: 10px;
   margin-top: 5px;
   padding: 5px;
+  background: #fff;
+  z-index: 9;
+  width: 100%;
 }
 .selectList .selectItem {
   padding: 5px;
   font-weight: 500;
   cursor: pointer;
+}
+@media screen and (min-width: 1280px) {
+  .selectList .selectItem {
+    padding: 10px;
+    font-size: 16px;
+  }
 }
 @media (hover: hover) and (pointer: fine) {
   .selectList .selectItem:hover {
@@ -852,12 +1131,48 @@ input[data-test-id=dp-input]:focus {
   gap: 16px;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 1280px) {
+  .tableHeader {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tableHeaderTop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
 
 .tableHeaderTopHeadline {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
+  text-align: center;
   color: #111827;
   margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .tableHeaderTopHeadline {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .tableHeaderTopHeadline {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tableHeaderTopHeadline {
+    font-size: 32px;
+  }
 }
 
 .tableHeaderTopAction {
@@ -869,6 +1184,11 @@ input[data-test-id=dp-input]:focus {
   align-items: center;
   gap: 10px;
 }
+@media screen and (min-width: 1280px) {
+  .tableHeaderTopAction {
+    gap: 20px;
+  }
+}
 
 .tableHeaderBottomAction {
   display: -webkit-box;
@@ -879,4 +1199,171 @@ input[data-test-id=dp-input]:focus {
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 10px;
+}
+@media screen and (min-width: 1024px) {
+  .tableHeaderBottomAction {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tableHeaderBottomAction {
+    gap: 16px;
+  }
+}
+
+.tableBody {
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 10px;
+  background: #f0f0f7;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #55555c;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  th {
+    padding: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  th {
+    padding: 17px;
+  }
+}
+th:first-child {
+  width: 150px;
+}
+th:last-child {
+  width: 300px;
+}
+th .tableBodyHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 12px;
+}
+@media screen and (min-width: 1024px) {
+  th .tableBodyHeader {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  th .tableBodyHeader {
+    font-size: 16px;
+  }
+}
+th .tableBodyHeader .tableBodyHeaderCheck {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #d3d3de;
+  font-size: 12px;
+  font-weight: 500;
+}
+td:last-child {
+  vertical-align: top;
+}
+@media screen and (min-width: 1024px) {
+  td {
+    padding: 16px;
+    font-size: 14px;
+  }
+}
+
+.tableBodyCheckbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .tableBodyCheckbox {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+.tableBodyCheckbox .tableBodyLabel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.tableBodyCheckbox .tableBodyChecked {
+  display: none;
+}
+.tableBodyCheckbox .customCheckbox {
+  width: 18px;
+  height: 18px;
+  background: #d3d3de;
+  border-radius: 4px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.tableBodyCheckbox .tableBodyChecked:checked + .customCheckbox {
+  background: #1b1b1f;
+}
+.tableBodyCheckbox .tableBodyChecked:checked + .customCheckbox::after {
+  display: inline-block;
+  content: "";
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  background: url("/public/icons/ic-checked.svg") no-repeat center center;
+}
+
+.tableBodyEducationWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tableBodyEducation {
+  border: 1px solid rgba(14, 14, 16, 0.1);
+  border-radius: 8px;
+  padding: 4px 6px;
+  height: 24px;
 }

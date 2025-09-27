@@ -36,5 +36,70 @@ import PaginationButton from '@/components/PaginationButton/PaginationButton.vue
       />
     </div>
   </header>
-  <PaginationButton />
+  <main :class="styles.tableBody">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <div :class="styles.tableBodyHeader">
+              <div :class="styles.tableBodyHeaderCheck">
+                <img src="/icons/ic-check.svg" alt="check icon" />
+                Дата
+              </div>
+              <img :style="styles.tableBodyHeaderImg" src="/icons/ic-sort.svg" alt="sort icon" />
+            </div>
+          </th>
+          <th>
+            <div :class="styles.tableBodyHeader">
+              Регион
+              <img :style="styles.tableBodyHeaderImg" src="/icons/ic-sort.svg" alt="sort icon" />
+            </div>
+          </th>
+          <th>
+            <div :class="styles.tableBodyHeader">
+              Название
+              <img :style="styles.tableBodyHeaderImg" src="/icons/ic-sort.svg" alt="sort icon" />
+            </div>
+          </th>
+          <th>
+            <div :class="styles.tableBodyHeader">
+              Адрес
+              <img :style="styles.tableBodyHeaderImg" src="/icons/ic-sort.svg" alt="sort icon" />
+            </div>
+          </th>
+          <th>
+            <div :class="styles.tableBodyHeader">
+              Уровень образования
+              <img :style="styles.tableBodyHeaderImg" src="/icons/ic-sort.svg" alt="sort icon" />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div :class="styles.tableBodyCheckbox">
+              <label :class="styles.tableBodyLabel">
+                <input type="checkbox" :class="styles.tableBodyChecked" />
+                <span :class="styles.customCheckbox"></span>
+              </label>
+              12/12/2025
+            </div>
+          </td>
+          <td>Белгородская область</td>
+          <td>МБОУ Средняя общеобразовательная школа №2</td>
+          <td>ул. Николая Гондатти, д. 13 ул. Н. Гондатти 13 ; ул. Н. Зелинского 22</td>
+          <td>
+            <div :class="styles.tableBodyEducationWrapper">
+              <span :class="styles.tableBodyEducation">Среднее</span>
+              <span :class="styles.tableBodyEducation">Среднее</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <PaginationButton />
+  </footer>
 </template>

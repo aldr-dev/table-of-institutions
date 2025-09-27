@@ -9,7 +9,6 @@ export const useSchoolStore = defineStore('school', {
     isError: '' as string | null,
     currentPage: 1,
     pagesCount: 0,
-    totalCount: 0,
   }),
 
   actions: {
@@ -21,8 +20,7 @@ export const useSchoolStore = defineStore('school', {
         const response = await axiosApi.get(`/schools?page=${page}&count=${count}`);
         const { data } = response.data;
         this.responseData = data.list;
-        this.pagesCount = data.total_count;
-        this.totalCount = data.total_count;
+        this.pagesCount = data.pages_count;
       } catch (error) {
         this.isError = 'Произошла ошибка!' + error;
       } finally {
