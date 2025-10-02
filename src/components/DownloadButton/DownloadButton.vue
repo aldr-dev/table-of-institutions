@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import style from './DownloadButton.module.scss';
+import { documentDownload } from '@/helpers/documentDownload.ts';
 </script>
 
 <template>
-  <button :class="style.downloadButton" type="button">Скачать</button>
+  <button @click="documentDownload" :class="style.downloadButton" type="button">Скачать</button>
 </template>

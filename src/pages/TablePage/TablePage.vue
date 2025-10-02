@@ -5,8 +5,17 @@ import DateRangePicker from '@/components/DateRangePicker/DateRangePicker.vue';
 import SearchInput from '@/components/SearchInput/SearchInput.vue';
 import styles from './TablePage.module.scss';
 import PaginationButton from '@/components/PaginationButton/PaginationButton.vue';
-</script>
+import { useSchoolStore } from '@/stores/schoolStore.ts';
+import { format } from 'date-fns';
 
+function highlightText(text: string, query: string) {
+  if (!query) return text;
+  const regex = new RegExp(`(${query})`, 'gi');
+  return text.replace(regex, `<span class="highlight">$1</span>`);
+}
+
+const store = useSchoolStore();
+</script>
 <template>
   <header :class="styles.tableHeader">
     <div :class="styles.tableHeaderTop">
@@ -76,23 +85,33 @@ import PaginationButton from '@/components/PaginationButton/PaginationButton.vue
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr v-for="data in store.searchSchool" :key="data.uuid">
           <td>
             <div :class="styles.tableBodyCheckbox">
               <label :class="styles.tableBodyLabel">
-                <input type="checkbox" :class="styles.tableBodyChecked" />
+                <input type="checkbox" :checked="data.is_federal" :class="styles.tableBodyChecked" />
                 <span :class="styles.customCheckbox"></span>
               </label>
-              12/12/2025
+              {{ format(data.updated_at, 'dd/MM/yy') }}
             </div>
           </td>
-          <td>Белгородская область</td>
-          <td>МБОУ Средняя общеобразовательная школа №2</td>
-          <td>ул. Николая Гондатти, д. 13 ул. Н. Гондатти 13 ; ул. Н. Зелинского 22</td>
+          <td>
+            <span v-html="highlightText(data.edu_org.region.name, store.searchQuery)"></span>
+          </td>
+          <td>
+            <span v-html="highlightText(data.edu_org.short_name || data.edu_org.full_name, store.searchQuery)"></span>
+          </td>
+          <td>
+            <span v-html="highlightText(data.edu_org.contact_info.post_address, store.searchQuery)"></span>
+          </td>
           <td>
             <div :class="styles.tableBodyEducationWrapper">
-              <span :class="styles.tableBodyEducation">Среднее</span>
-              <span :class="styles.tableBodyEducation">Среднее</span>
+              <span
+                v-for="education in data.supplements[0].educational_programs"
+                :key="education.uuid"
+                :class="styles.tableBodyEducation"
+                >{{ education.edu_level.name }}</span
+              >
             </div>
           </td>
         </tr>

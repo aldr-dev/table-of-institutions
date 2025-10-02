@@ -1367,3 +1367,7 @@ td:last-child {
   padding: 4px 6px;
   height: 24px;
 }
+
+.highlight {
+  background: yellow;
+}
