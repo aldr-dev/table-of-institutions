@@ -7,7 +7,7 @@ import autoprefixer from 'gulp-autoprefixer';
 
 const paths = {
   styles: './src/**/*.{scss, module.scss}',
-  output: './src/assets/',
+  output: './src/app/',
 };
 
 function buildScssFromCss() {
