@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import styles from './search-input.module.scss';
-import { useSchoolStore } from '@/shared/lib/stores/school-store.ts';
+import { useSchoolStore } from '@/app/stores/school-store.ts';
 
 const store = useSchoolStore();
 </script>

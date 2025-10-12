@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useSchoolStore } from '@/shared/lib/stores/school-store.ts';
+import { useSchoolStore } from '@/app/stores/school-store.ts';
 import { computed, watch, ref, onMounted, onBeforeUnmount } from 'vue';
 import styles from './pagination-button.module.scss';
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import style from './download-button.module.scss';
-import { useSchoolStore } from '@/shared/lib/stores/school-store.ts';
+import { useSchoolStore } from '@/app/stores/school-store.ts';
 
 const store = useSchoolStore();
 </script>

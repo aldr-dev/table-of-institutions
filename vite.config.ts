@@ -6,8 +6,8 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/table-of-institutions/',
   plugins: [vue(), vueDevTools()],
+  base: '/table-of-institutions/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

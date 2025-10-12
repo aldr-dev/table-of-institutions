@@ -5,7 +5,7 @@ import DateRangePicker from '@/shared/components/ui/date-range-picker/date-range
 import SearchInput from '@/shared/components/ui/search-input/search-input.vue';
 import styles from './main-table.module.scss';
 import PaginationButton from '@/shared/components/ui/pagination-button/pagination-button.vue';
-import { useSchoolStore } from '@/shared/lib/stores/school-store.ts';
+import { useSchoolStore } from '@/app/stores/school-store.ts';
 import { format } from 'date-fns';
 import { highlightText, uniqueEducations } from '@/pages/table/useTabPage.ts';
 
