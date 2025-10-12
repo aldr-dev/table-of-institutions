@@ -6,7 +6,7 @@ import styles from './page-not-found.module.scss';
     <div :class="styles.containerNotFound">
       <h1 :class="styles.headlineNotFound">404</h1>
       <p :class="styles.descNotFound">Упс... страница которую вы ищите не найдена!</p>
-      <router-link to="/" :class="styles.linkNotFound">На главную</router-link>
+      <router-link to="/table-of-institutions/" :class="styles.linkNotFound">На главную</router-link>
     </div>
   </div>
 </template>
